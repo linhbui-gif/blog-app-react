@@ -5,7 +5,7 @@ import {Router} from "@reach/router";
 import Guest from "./layouts/Guest";
 import {LayoutPaths, Pages, Paths, PublicRoute} from "./router";
 import { Redirect } from '@reach/router';
-import BlogLayout from "./layouts/BlogLayouts";
+// import BlogLayout from "./layouts/BlogLayouts";
 
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
             <Guest path={LayoutPaths.Guest}>
                 <PublicRoute path={Paths.Home} component={Pages.Home} />
                 <PublicRoute path={Paths.BlogList} component={Pages.Blog} />
-                <PublicRoute path={Paths.BlogDetails} component={Pages.BlogDetails} />
+                <PublicRoute path={Paths.NewDetail} component={Pages.NewDetail} />
                 <Redirect noThrow from={Paths.Rest} to={`${LayoutPaths.Guest}${Paths.Home}`} />
             </Guest>
             {/*<BlogLayout path={LayoutPaths.Blog}>*/}

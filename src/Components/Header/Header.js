@@ -6,7 +6,7 @@ import ImageBlog from '../../assets/images/logo.png'
         <div className="container">
           <div className="row">
             <div className="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
-              <a href="index-3.html " className="">
+              <a href="#" className="">
                 <img
                   src={ImageBlog}
                   alt="Visapress an Immigration and Visa Consulting Website Template"
@@ -21,16 +21,16 @@ import ImageBlog from '../../assets/images/logo.png'
                     <a href="/">Home</a>
                   </li>
                   <li>
-                    <a href="/blog">Blog</a>
+                    <a href="/tin-tuc">Blog</a>
                   </li>
                   <li>
                     <a href="#">Visas</a>
                     <ul>
                       <li>
-                        <a href="visa-immigration-list-page.html">Visa List Page</a>
+                        <a href="#">Visa List Page</a>
                       </li>
                       <li>
-                        <a href="visa-immigration-single-page.html">
+                        <a href="#">
                           Visa Single Page
                         </a>
                       </li>
@@ -40,16 +40,16 @@ import ImageBlog from '../../assets/images/logo.png'
                     <a href="#">Country</a>
                     <ul>
                       <li>
-                        <a href="country-list-page.html">Country List Page</a>
+                        <a href="#">Country List Page</a>
                       </li>
                       <li>
-                        <a href="country-img-list-page.html">Country List Page v2 </a>
+                        <a href="#">Country List Page v2 </a>
                       </li>
                       <li>
-                        <a href="country-single-page.html">Country Single Page</a>
+                        <a href="#">Country Single Page</a>
                       </li>
                       <li>
-                        <a href="country-single-full-page.html">Country Full Page</a>
+                        <a href="#">Country Full Page</a>
                       </li>
                     </ul>
                   </li>
@@ -60,21 +60,21 @@ import ImageBlog from '../../assets/images/logo.png'
                         <a href="#">About Us</a>
                         <ul>
                           <li>
-                            <a href="about-us-page-v1.html">About us v1</a>
+                            <a href="#">About us v1</a>
                           </li>
                         </ul>
                       </li>
                       <li>
-                        <a href="founder-page.html">Founder page</a>
+                        <a href="#">Founder page</a>
                       </li>
                       <li>
-                        <a href="agent-list-page.html">Agent List</a>
+                        <a href="#">Agent List</a>
                       </li>
                       <li>
-                        <a href="agent-single-page.html">Agent Single</a>
+                        <a href="#">Agent Single</a>
                       </li>
                       <li>
-                        <a href="partner-university-page.html">
+                        <a href="#">
                           Partner University Page
                         </a>
                       </li>

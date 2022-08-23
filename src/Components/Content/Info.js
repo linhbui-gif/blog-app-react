@@ -18,9 +18,9 @@ const Info = (props) => {
             <p>
                 {props.description}
             </p>
-           
+              <div dangerouslySetInnerHTML={{ __html: props.content }}/>
           </div>
-          <div className="slanting-pattern-small" />
+          <div className="slanting-pattern-small"  />
         </div>
  
        

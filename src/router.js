@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React, {lazy, Suspense} from 'react';
 
 const retryLoadComponent = (fn, retriesLeft = 5, interval = 1000) =>
     new Promise((resolve, reject) => {
@@ -17,26 +17,24 @@ const retryLoadComponent = (fn, retriesLeft = 5, interval = 1000) =>
     });
 const Home = lazy(() => retryLoadComponent(() => import('./Pages/Home/index')));
 const Blog = lazy(() => retryLoadComponent(() => import('./Pages/Blog/index')));
-const BlogDetails = lazy(() => retryLoadComponent(() => import('./Pages/BlogDetails/index')));
-
+const NewDetail = lazy(() => retryLoadComponent(() => import('./Pages/BlogDetails/index')));
 export const LayoutPaths = {
     Guest: '/',
-    Blog: '/blog',
-    BlogDetails : '/blogdetais'
-  };
+    Blog: '/tin-tuc',
+};
 export const Paths = {
     Home: '/',
-    BlogList: '/blog',
-    BlogDetails : '/blogdetails',
+    BlogList: '/tin-tuc',
+    NewDetail: `${LayoutPaths.Blog}/:id`,
     Rest: '*'
 };
 export const Pages = {
     Home,
     Blog,
-    BlogDetails
+    NewDetail
 };
-export const PublicRoute = ({ component: Component, ...rest }) => (
-    <Suspense fallback={<div className="DOM-Loading" />}>
+export const PublicRoute = ({component: Component, ...rest}) => (
+    <Suspense fallback={<div className="DOM-Loading"/>}>
         <Component {...rest} />
     </Suspense>
 );

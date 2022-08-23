@@ -5,7 +5,7 @@ const BlogList = () => {
     const [blogList , setBlogList] = useState([]);
     useEffect(() => {
         getBlogList();
-    }, [])
+    },[])
     const getBlogList = async () => {
         try {
             const response = await ApiHelper.get({ path:'news', params: {}})
@@ -23,7 +23,7 @@ const BlogList = () => {
                     {blogList && blogList.map(element => {
                         return (
                             <div key={element.id} className="col-xl-3 col-lg-3 col-md-6 col-sm-3 col-12 ">
-                                <Card category={element.category.name} image = {element.url_picture} name={element.name} description={element.description} />
+                                <Card id={element.id} category={element.category.name} image = {element.url_picture} name={element.name} description={element.description} />
                             </div>)
                     })}
                 </div>
