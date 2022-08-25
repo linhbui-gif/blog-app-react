@@ -4,9 +4,11 @@
 
 .visa-card-program {
     position: absolute;
-    background-color: red;
-    top: 184px;
+    background-color: #f67125;
+    top: 175px;
     border-radius: 10px;
+    padding: 7px;
+    margin-left: 38px;
     color: wheat;
 }
 
@@ -23,11 +25,7 @@
     -webkit-box-orient: vertical;
    
 }
-.title:hover {
-    overflow: visible;
-    white-space: normal;
-    height: auto;
-}
+
 .visacard-description{
     overflow: hidden;
     text-overflow: ellipsis;
@@ -36,11 +34,8 @@
     -webkit-box-orient: vertical;
    
 }
-.visacard-description:hover{
-    overflow: visible;
-    white-space: normal;
-    height: auto;
-}
+
+/* loading */
 .loading{
     position: fixed;
     background: #00000061;
