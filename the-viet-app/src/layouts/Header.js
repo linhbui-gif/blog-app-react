@@ -1,3 +1,6 @@
+import ButtonComponent from "../components/Button";
+import InputComponent from "../components/Input";
+
 const HeaderLayout = () => {
     return (
         <>
@@ -28,11 +31,6 @@ const HeaderLayout = () => {
                                         <a href="index.html" className="nav-link active">
                                             Trang chủ{" "}
                                         </a>
-                                        {/* <ul class="dropdown-menu">
-                              <li class="nav-item"><a href="index.html" class="nav-link active">Home 1</a></li>
-                              <li class="nav-item"><a href="index-2.html" class="nav-link">Home 2</a></li>
-                              <li class="nav-item"><a href="index-3.html" class="nav-link">Home 3</a></li>
-                          </ul> */}
                                     </li>
                                     <li className="nav-item">
                                         <a href="#" className="nav-link">
@@ -66,15 +64,6 @@ const HeaderLayout = () => {
                                         <a href="blog.html" className="nav-link">
                                             Tin tức
                                         </a>
-                                        {/* <ul class="dropdown-menu">
-                              <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-                              <li class="nav-item"><a href="blog-grid.html" class="nav-link">Blog Grid</a></li>
-                              <li class="nav-item"><a href="blog-single-sidebar.html" class="nav-link">Blog Single
-                                      Sidebar</a>
-                              </li>
-                              <li class="nav-item"><a href="blog-single.html" class="nav-link">Blog Single</a>
-                              </li>
-                          </ul> */}
                                     </li>
                                     <li className="nav-item">
                                         <a href="contact.html" className="nav-link">
@@ -85,20 +74,14 @@ const HeaderLayout = () => {
                                 <div className="others-option d-flex align-items-center">
                                     <div className="option-item">
                                         <form className="search-box">
-                                            <input
-                                                type="text"
-                                                className="input-search"
-                                                placeholder="Tra cứu thông tin..."
-                                            />
+                                            <InputComponent className="input-search" type="text" placeholder="Tra cứu thông tin..." />
                                             <button type="submit">
                                                 <i className="uil uil-search-alt" />
                                             </button>
                                         </form>
                                     </div>
                                     <div className="option-item">
-                                        <a href="contact.html" className="btn theme-btn-1">
-                                            Đăng ký thẻ ngay <i className="las la-angle-right" />
-                                        </a>
+                                        <ButtonComponent iconClass="las la-angle-right" icon = {true} className="theme-btn-1" buttonType={true} name="Đăng ký ngay" />
                                     </div>
                                 </div>
                             </div>
@@ -127,16 +110,11 @@ const HeaderLayout = () => {
                                                 className="input-search"
                                                 placeholder="Search for anything"
                                             />
-                                            <button type="submit">
-                                                <i className="flaticon-loupe" />
-                                            </button>
+                                            <ButtonComponent type="submit" iconClass="flaticon-loupe" icon = {true} className="theme-btn-1" buttonType={false} name="Get Started" />
                                         </form>
                                     </div>
                                     <div className="option-item">
-                                        <a href="contact.html" className="btn theme-btn-1">
-                                            <i className="las la-angle-right" />
-                                            Get Started
-                                        </a>
+                                        <ButtonComponent iconClass="las la-angle-right" icon = {true} className="theme-btn-1" buttonType={true} name="Get Started" />
                                     </div>
                                 </div>
                             </div>
