@@ -10,14 +10,14 @@ const Card = (props) => {
                     <img src={props.image} alt="" className="img-fluid"/>
                 </a>
             </div>
-            <p>{props.category}</p>
+            <p className='visa-card-program'>{props.category}</p>
             <div className="visa-card-content">
                 <h3 className="visa-card-title">
                     <a href={`${LayoutPaths.Blog}/${props.id}`} className="title">
                         {props.name}
                     </a>
                 </h3>
-                <p>
+                <p className='visacard-description'>
                     {props.description}
                 </p>
                 <a href={`${LayoutPaths.Blog}/${props.id}`} className="btn-link-primary">
