@@ -1,0 +1,58 @@
+.visa-card {
+    position: relative;
+}
+
+.visa-card-program {
+    position: absolute;
+    background-color: red;
+    top: 184px;
+    border-radius: 10px;
+    color: wheat;
+}
+
+
+.visa-card-img img {
+    height: 200px;
+    object-fit: cover;
+}
+.title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+   
+}
+.title:hover {
+    overflow: visible;
+    white-space: normal;
+    height: auto;
+}
+.visacard-description{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+   
+}
+.visacard-description:hover{
+    overflow: visible;
+    white-space: normal;
+    height: auto;
+}
+.loading{
+    position: fixed;
+    background: #00000061;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+.loading.hide{
+    display: none;
+}
