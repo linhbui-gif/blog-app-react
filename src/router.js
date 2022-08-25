@@ -15,23 +15,16 @@ const retryLoadComponent = (fn, retriesLeft = 5, interval = 1000) =>
                 }, interval);
             });
     });
-const Home = lazy(() => retryLoadComponent(() => import('./Pages/Home/index')));
-const Blog = lazy(() => retryLoadComponent(() => import('./Pages/Blog/index')));
-const NewDetail = lazy(() => retryLoadComponent(() => import('./Pages/BlogDetails/index')));
+const Home = lazy(() => retryLoadComponent(() => import('pages/home/index')));
 export const LayoutPaths = {
     Guest: '/',
-    Blog: '/tin-tuc',
 };
 export const Paths = {
     Home: '/',
-    BlogList: '/tin-tuc',
-    NewDetail: `${LayoutPaths.Blog}/:id`,
     Rest: '*'
 };
 export const Pages = {
     Home,
-    Blog,
-    NewDetail
 };
 export const PublicRoute = ({component: Component, ...rest}) => (
     <Suspense fallback={<div className="DOM-Loading"/>}>
