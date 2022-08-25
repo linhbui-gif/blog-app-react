@@ -1,6 +1,6 @@
 import ButtonComponent from "../components/Button";
 import InputComponent from "../components/Input";
-
+import Logo from 'assets/images/logo-2.png'
 const HeaderLayout = () => {
     return (
         <>
@@ -10,8 +10,8 @@ const HeaderLayout = () => {
                     <div className="container">
                         <div className="acavo-responsive-menu">
                             <div className="logo">
-                                <a href="index.html">
-                                    <img src="./assets/images/logo-2.png" alt="logo" />
+                                <a href="/">
+                                    <img src="assets/images/logo-2.png" alt="logo" />
                                 </a>
                             </div>
                         </div>
@@ -22,13 +22,13 @@ const HeaderLayout = () => {
                     {/* Container */}
                     <div className="container-fluid">
                         <nav className="navbar navbar-expand-md navbar-light">
-                            <a className="navbar-brand" href="index.html">
-                                <img src="./assets/images/logo-2.png" alt="logo" />
+                            <a className="navbar-brand" href="#">
+                                <img src={Logo} alt="logo" />
                             </a>
                             <div className="collapse navbar-collapse mean-menu">
                                 <ul className="navbar-nav">
                                     <li className="nav-item">
-                                        <a href="index.html" className="nav-link active">
+                                        <a href="/" className="nav-link active">
                                             Trang chủ{" "}
                                         </a>
                                     </li>
@@ -124,7 +124,6 @@ const HeaderLayout = () => {
                     {/* /Container */}
                 </div>
             </div>
-
         </>
     )
 }
