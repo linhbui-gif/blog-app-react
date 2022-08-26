@@ -1,6 +1,14 @@
 import React from "react";
+
 import Guest from "layouts/Guest";
+import img1 from '../../images/hero/hero-1.png'
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
+
 const HomePage = () => {
+   
+
     return (
         <Guest>
             <div
@@ -8,6 +16,7 @@ const HomePage = () => {
                 style={{ background: 'url("images/hero/banner-bg.png")' }}
             >
                 {/* container */}
+                <OwlCarousel   className='owl-theme' loop margin={10} items={1}  >
                 <div className="hero-banner-carousel owl-loaded owl-carousel">
                     <div className="hero-carousel-item ">
                         <div className="container">
@@ -52,7 +61,7 @@ const HomePage = () => {
                                     >
                                         <img
                                             className="img-fluid wow fadeInRight animated"
-                                            src="images/hero/hero-1.png"
+                                            src={img1}
                                             alt="hero-1"
                                         />
                                     </div>
@@ -64,6 +73,8 @@ const HomePage = () => {
                         {/* /container */}
                     </div>
                 </div>
+                </OwlCarousel>
+               
             </div>
             <div className="counterup_aera d-flex flex-wrap pt-100 pb-100">
                 <div className="counterup_text  mb-lm-30px">
