@@ -25,9 +25,7 @@ const HomePage = () => {
             0: {
                 items: 1,
             },
-            600: {
-                items: 1,
-            },
+           
           
         },
     }
@@ -224,7 +222,7 @@ const HomePage = () => {
           <div className="row">
       
             <div className="service-carousel testimonial-item-wrap-1">
-              <OwlCarousel className="owl-theme" {...options} loop margin={10} items={3}>
+              <OwlCarousel className="owl-theme"  loop margin={10} items={3}>
               <div className="service-item">
                 <div className="col-12">
                   <div className="single-services-item">
@@ -305,7 +303,7 @@ const HomePage = () => {
           {/* row */}
           <div className="row">
             <div className="news-carousel testimonial-item-wrap-1">
-            <OwlCarousel className="owl-theme" {...options} loop margin={10} items={3}>
+            <OwlCarousel className="owl-theme"  loop margin={10} items={3}>
               <div className="news-item">
                 <div className="col-12">
                   <div className="blog-wrapper mb-30">
@@ -441,7 +439,7 @@ const HomePage = () => {
       {/* col */}
       <div className="col-lg-12">
         <div className="testimonial-item-wrap-1 testimonial-carousel-1">
-        <OwlCarousel className="owl-theme" {...options} loop margin={10} items={5}>
+        <OwlCarousel className="owl-theme" loop margin={10} items={5}>
           <div className="testimonial-item">
             <div className="testimonial-author">
               <img src={img4} alt="small-avatar" />
@@ -778,7 +776,7 @@ const HomePage = () => {
     {/* row */}
     <div className="row">
       <div className="news-carousel testimonial-item-wrap-1">
-      <OwlCarousel className="owl-theme" {...options} loop margin={10} items={3}>
+      <OwlCarousel className="owl-theme"  loop margin={10} items={3}>
         <div className="news-item">
           <div className="col-12">
             <div className="blog-wrapper mb-30">
@@ -904,7 +902,7 @@ const HomePage = () => {
     <div className="row">
       {/* col */}
       <div className="clients-carousel testimonial-item-wrap-1">
-      <OwlCarousel className="owl-theme" {...options} loop margin={10} items={6}>
+      <OwlCarousel className="owl-theme" loop margin={10} items={6}>
         <div className="clients-item">
           <div className="col-12 text-center">
             <div className="client-logo">
