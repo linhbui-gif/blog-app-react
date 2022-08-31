@@ -7,7 +7,7 @@ const Guest = ({ children }) => {
       <div className="Guest">
         <Header/>
         {children}
-        {/*<Footer/>*/}
+        <Footer/>
       </div>
   );
 };
