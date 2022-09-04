@@ -2,25 +2,15 @@ import OwlCarousel from "react-owl-carousel";
 import img1 from "images/hero/hero-1.png";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import OWlCarouselComponent from "components/OwlCarousel";
 const BannerContainer = () => {
-    const options= {
-        
-        responsive: {
-            0: {
-                items: 1,
-            },
-            600: {
-                items: 1,
-            },
-          
-        },
-    }
+  
     return (
         <div
             className="hero-1 oh pos-rel"
             style={{ background: 'url("images/hero/banner-bg.png")' }}
         >
-            <OwlCarousel className="owl-theme" loop margin={10} items={1}>
+            <OWlCarouselComponent className="owl-theme"  loop margin={10} items={1}>
                 <div className="hero-banner-carousel owl-loaded owl-carousel">
                     <div className="hero-carousel-item ">
                         <div className="container">
@@ -76,7 +66,7 @@ const BannerContainer = () => {
                         </div>
                     </div>
                 </div>
-            </OwlCarousel>
+            </OWlCarouselComponent>
         </div>
     )
 }
