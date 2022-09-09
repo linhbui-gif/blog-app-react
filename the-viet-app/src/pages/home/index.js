@@ -20,7 +20,7 @@ import ContactContainer from "containers/Contact";
 const HomePage = () => {
  
   return (
-    <Guest>
+    <>
       <BannerContainer />
       <CounterUpContainer />
       <AboutContainer />
@@ -31,8 +31,8 @@ const HomePage = () => {
      <DownloadContainer/>
      <ServiceLinkingContainer/>                     
      <ClientContainer/>
-     <ContactContainer/>
-    </Guest>
+    
+    </>
   );
 };
 export default HomePage;

@@ -3,8 +3,45 @@ import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import img4 from 'images/testimonial/03.jpg';
 import OWlCarouselComponent from "components/OwlCarousel";
+import ApiHelper from 'service/services';
+import { useState } from "react";
+import { useEffect } from "react";
+import TypoComponent from "components/Typography";
 const FeedbackContainer = ()=>{
+  const options = {
+    loop:true,
+    margin : 10,
+    items :1,
+    responsive:{
+        0: {
+            items:2
+        },
+        1200:{
+            items:3
+        }
+    }
+}
+  const [feedback,setFeedback] = useState({});
+  console.log(feedback);
+
+  useEffect(()=>{
+      getFeedback();
+  },[]);
+  const getFeedback = async ()=>{
+      try {
+          const response = await ApiHelper.get({ path:'common-data', params: {}});
+          console.log(response);
+          if(response.success){
+            setFeedback(response.data)
+          }
+      } catch (error) {
+          console.log('error');
+      }
+  }
+  const bannerTeam = feedback?.bannerTeam;
+  const isExitsBannerTeam = Array.isArray(bannerTeam);
     return (
+
         <div className="testimonial-area pt-100 pb-100">
         {/* Container */}
         <div className="container">
@@ -12,14 +49,8 @@ const FeedbackContainer = ()=>{
           <div className="row justify-content-center text-center">
             {/* col */}
             <div className="col-lg-8 col-md-12 mb-50">
-              <div className="section-title">
-                <h2 className="title">Khách hàng nói gì về chúng tôi?</h2>
-                <div className="title-bdr">
-                  <div className="left-bdr" />
-                  <div className="right-bdr" />
-                </div>
-                {/* <p>You can see our clients feedback what you say?</p> */}
-              </div>
+              <TypoComponent name={'Khách hàng nói gì về chúng tôi?'} titleBdr></TypoComponent>
+           
             </div>
             {/* /col */}
           </div>
@@ -33,185 +64,31 @@ const FeedbackContainer = ()=>{
             {/* col */}
             <div className="col-lg-12">
               <div className="testimonial-item-wrap-1 testimonial-carousel-1">
-                <OWlCarouselComponent className="owl-theme"  loop margin={10} items={5} >
-                  <div className="testimonial-item">
-                    <div className="testimonial-author">
-                      <img src={img4} alt="small-avatar" />
-                      <h3 className="author__title">Jack Hardson</h3>
-                      <span className="author__meta">United States</span>
-                      {/* <span class="author__rating">
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                          </span> */}
-                    </div>
-                    <div className="testimonial-desc">
-                      <p className="testimonial__desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="testimonial-item">
-                    <div className="testimonial-author">
-                      <img src={img4} alt="small-avatar" />
-                      <h3 className="author__title">Mike Wood</h3>
-                      <span className="author__meta">United Kingdom</span>
+                <OWlCarouselComponent options={options} >
+              
+              {isExitsBannerTeam && bannerTeam.map((item,index)=>{
+               
+                return (
+                      
+        <div key={index} className="testimonial-item">
+        <div className="testimonial-author">
+          <img src={item?.picture} alt="small-avatar" />
+          <h3 className="author__title">{item?.title}</h3>
+          <span className="author__meta">{item?.name}</span>
+          
+        </div>
+        <div className="testimonial-desc">
+          <p className="testimonial__desc" dangerouslySetInnerHTML={{ __html: item?.description }}>
+           
+          </p>
+        </div>
+      </div>
+                 
+                
+                )
+              })};
 
-                    </div>
-                    <div className="testimonial-desc">
-                      <p className="testimonial__desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="testimonial-item">
-                    <div className="testimonial-author">
-                      <img src="images/testimonial/05.jpg" alt="small-avatar" />
-                      <h3 className="author__title">Mike Hardson</h3>
-                      <span className="author__meta">Italy</span>
-                      {/* <span class="author__rating">
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                              <i class="la la-star-half-o"></i>
-                          </span> */}
-                    </div>
-                    <div className="testimonial-desc">
-                      <p className="testimonial__desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="testimonial-item">
-                    <div className="testimonial-author">
-                      <img src={img4} alt="small-avatar" />
-                      <h3 className="author__title">Bernice Pease</h3>
-                      <span className="author__meta">Germany</span>
-
-                    </div>
-                    <div className="testimonial-desc">
-                      <p className="testimonial__desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="testimonial-item">
-                    <div className="testimonial-author">
-                      <img src={img4} alt="small-avatar" />
-                      <h3 className="author__title">Daniel Ward</h3>
-                      <span className="author__meta">India</span>
-                      {/* <span class="author__rating">
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                          </span> */}
-                    </div>
-                    <div className="testimonial-desc">
-                      <p className="testimonial__desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="testimonial-item">
-                    <div className="testimonial-author">
-                      <img src={img4} alt="small-avatar" />
-                      <h3 className="author__title">Kamran Ahmed</h3>
-                      <span className="author__meta">Bangladesh</span>
-                      {/* <span class="author__rating">
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                          </span> */}
-                    </div>
-                    <div className="testimonial-desc">
-                      <p className="testimonial__desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="testimonial-item">
-                    <div className="testimonial-author">
-                      <img src={img4} alt="small-avatar" />
-                      <h3 className="author__title">Jessica Brown</h3>
-                      <span className="author__meta">Netherlands</span>
-                      {/* <span class="author__rating">
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                          </span> */}
-                    </div>
-                    <div className="testimonial-desc">
-                      <p className="testimonial__desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="testimonial-item">
-                    <div className="testimonial-author">
-                      <img src={img4} alt="small-avatar" />
-                      <h3 className="author__title">Mike Hardson</h3>
-                      <span className="author__meta">Pakistan</span>
-                      {/* <span class="author__rating">
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                          </span> */}
-                    </div>
-                    <div className="testimonial-desc">
-                      <p className="testimonial__desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="testimonial-item">
-                    <div className="testimonial-author">
-                      <img src={img4} alt="small-avatar" />
-                      <h3 className="author__title">Bernice Pease</h3>
-                      <span className="author__meta">Australia</span>
-                      {/* <span class="author__rating">
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                          </span> */}
-                    </div>
-                    <div className="testimonial-desc">
-                      <p className="testimonial__desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="testimonial-item">
-                    <div className="testimonial-author">
-                      <img src={img4} alt="small-avatar" />
-                      <h3 className="author__title">Daniel Ward</h3>
-                      <span className="author__meta">Costa rica</span>
-                      {/* <span class="author__rating">
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                              <i class="la la-star"></i>
-                          </span> */}
-                    </div>
-                    <div className="testimonial-desc">
-                      <p className="testimonial__desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      </p>
-                    </div>
-                  </div>
+           
                 </OWlCarouselComponent>
               </div>
             </div>
@@ -221,6 +98,9 @@ const FeedbackContainer = ()=>{
         </div>
         {/* /Container */}
       </div>
+     
     )
-}
+   
+};
+
  export default FeedbackContainer;

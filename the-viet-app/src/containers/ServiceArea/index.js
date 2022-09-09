@@ -6,7 +6,21 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 
 import img8 from 'images/blog/blog1.jpg';
 import OWlCarouselComponent from "components/OwlCarousel";
+import TypoComponent from "components/Typography";
 const ServiceArea = ()=>{
+  const options = {
+    loop:true,
+    margin : 10,
+    items :1,
+    responsive:{
+        0: {
+            items:1
+        },
+        1200:{
+            items:3
+        }
+    }
+}
     return (
         <div className="services-area">
         {/* Container */}
@@ -15,17 +29,8 @@ const ServiceArea = ()=>{
           <div className="row justify-content-center text-center">
             {/* col */}
             <div className="col-lg-8 col-md-12 mb-50">
-              <div className="section-title">
-                <h2 className="title">Tiện ích thông minh</h2>
-                <div className="title-bdr">
-                  <div className="left-bdr" />
-                  <div className="right-bdr" />
-                </div>
-                <p>
-                  Trải nghiệm siêu tiện ích thông minh trên các lĩnh vực trong
-                  tầm tay
-                </p>
-              </div>
+              <TypoComponent name={'Tiện ích thông minh'} titleBdr></TypoComponent>
+              
             </div>
 
           </div>
@@ -34,7 +39,7 @@ const ServiceArea = ()=>{
           <div className="row">
 
             <div className="service-carousel testimonial-item-wrap-1">
-              <OWlCarouselComponent className="owl-theme" loop margin={10} items={3}>
+              <OWlCarouselComponent options={options}>
                 <div className="service-item">
                   <div className="col-12">
                     <div className="single-services-item">
